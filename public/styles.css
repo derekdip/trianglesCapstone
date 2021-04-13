@@ -1,0 +1,79 @@
+.body{
+    background-color:  #E5A298;
+}
+.img{
+    background-image: url("https://i2.wp.com/laceandyarn.com/wp-content/uploads/2015/06/triangle-pattern-7-rows.jpg" );
+    background-size: 350px;
+  color: pink;
+}
+.navElement{
+    font-size: x-large;
+    font-weight: bold;
+}
+
+.nav-link{
+    font-size: large;
+    font-weight: bolder;
+}
+.box{
+    background-color: #00735C;
+    border-radius: 25px;
+    outline-color: rgba(0, 0, 0, 0.354);
+    padding: 20px;
+}
+.input{
+    display: inline-block;
+    outline-color: black;
+    border-radius: 25px;
+    background-color: white;
+}
+.form-control{
+    background-color:#ebceca;
+}
+.form-control[type="autocomplete"],textarea{
+    background-color: #ebceca;
+}
+.form-control[type="text"],textarea{
+    background-color: #ebceca;
+}
+.form-control[type="password"],textarea{
+    background-color: #ebceca;
+}
+.inputPrompt{
+    display: inline-block;
+    padding-top: 7px;
+    padding-bottom: 4px ;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 25px;
+    background-color: #C1D9B7;
+}
+a:hover{
+   color:red;
+}
+.login-form{
+    max-width:500px;
+    
+    margin:auto;
+}
+.login-form h1{
+    text-align: center;
+    margin:24px 0;
+    font-size:40px
+}
+.login-form button{
+    display: inline-block;
+    width:100px;
+    background-color:rgb(109, 142, 43);
+    padding:12px 24px ;
+    color:white;
+    font-size: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+.login-form label{
+    font-size:20px;
+    color:#00E091
+
+
+}

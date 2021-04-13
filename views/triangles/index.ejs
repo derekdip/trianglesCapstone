@@ -1,0 +1,50 @@
+
+<%- include("../partials/navbar") %>
+<h1 class="text-center text-3l my-8">All Triangles</h1>
+    <div>
+        <a href="/triangles/new">Claim new triangle</a>
+    </div>
+    <div class="card" style="width: 18rem; display: inline-block;">
+        <img src="https://www.thelaughclub.net/wp-content/uploads/sites/5/2020/04/TriangleSolution3.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+      <div class="card" style="width: 18rem; display: inline-block;">
+        <img src="https://www.thelaughclub.net/wp-content/uploads/sites/5/2020/04/TriangleSolution3.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+      <div class="card" style="width: 18rem;display: inline-block;">
+        <img src="https://www.thelaughclub.net/wp-content/uploads/sites/5/2020/04/TriangleSolution3.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+      <div class="card" style="width: 18rem; display: inline-block;">
+        <img src="https://www.thelaughclub.net/wp-content/uploads/sites/5/2020/04/TriangleSolution3.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+    <%for (let triangle of triangles){%>
+        <li><a href="/triangles/<%=triangle.id%>"><%=triangle.name%></a></li>
+        <div class="card" style="width: 18rem;">
+            <img src="https://www.thelaughclub.net/wp-content/uploads/sites/5/2020/04/TriangleSolution3.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title"><%=triangle.name%></h5>
+              <p class="card-text"><%=triangle.sides%>></p>
+              <a href="/triangles/<%=triangle.id%>" class="btn btn-primary">See more about this triangle</a>
+            </div>
+          </div>
+    <%}%>
+<%- include("../partials/footer") %>

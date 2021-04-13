@@ -1,0 +1,33 @@
+<%- include("../partials/navbar") %>
+<div>
+    <a href="/triangles">Go back to all Triangles</a>
+</div>
+<h1 style="color: #00735C;">Resgister a new Triangle</h1>
+    <form class="needs-validation" action="/triangles" method="POST" novalidate>
+        
+        <div>
+            <label class="inputPrompt" for="name">Enter Triangle Name:</label>
+            <input class="input" type="text" id="name" name="triangle[name]" required/>
+        </div>
+        <div>
+            <label class ="inputPrompt" for="description">Enter in comment:</label>
+            <textarea name="triangle[description]" id="description" cols="30" rows="4" required></textarea>
+        </div>
+        <div >
+            <label class ="inputPrompt" for="sides">Enter two whole numbers that have no common factors:</label>
+            <input id="num1" class ="input" type="text" />
+            <input id="num2" class ="input" type="text"/>
+            <input name="triangle[sides]" class="input"  type="text" id="side" disabled   required/>
+        </div>
+        <div>
+            <label class="inputPrompt"for="image">Upload Image</label>
+            <!--<input type="text" id="image" name="triangle[image]"></canvas>-->
+            
+            <input class ="input" type="text" id = "uploadImage" name="triangle[image]" required></input>
+            
+        </div>
+        <button id="formbtn">Submit</button>
+    </form>
+    <script type="text/javascript" src="/javascripts/materialize.js"></script>
+    <script type="text/javascript" src="/javascripts/calculator.js"></script>
+<%- include("../partials/footer") %>

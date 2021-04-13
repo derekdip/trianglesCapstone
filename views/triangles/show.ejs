@@ -1,0 +1,60 @@
+<%- include("../partials/navbar") %>
+<div>
+    <a href="/triangles">Go to all triangles</a>
+    
+</div>
+<p>id: <%=triangle.id%></p>
+<h1><%=triangle.name%></h1>
+<p>Submitted By: <%= triangle.submittedBy.username  %> </p>
+
+<h3>quick drawing of triangle</h3>
+<p><%=triangle.sides%></p>
+<img src="<%=triangle.image%>" alt="no image found" srcset="">
+<h4>Description</h4>
+<p><%=triangle.description%></p>
+
+
+
+
+<% if(user && triangle.submittedBy.equals(user) ) { %>
+<form action="/triangles/<%=triangle.id%>/delete?_method=DELETE" method="POST">
+    <button>DELETE TRIANGLE</button>
+</form>
+<div>
+    <a href="/triangles/<%=triangle.id%>/edit">Edit <%= triangle.name %> </a>
+</div>
+<%}%>
+<% if(user) { %>
+<h2>Leave a Review</h2>
+<form class="needs-validation" action="/triangles/<%=triangle.id%>/reviews" method="POST" novalidate>
+    <div>
+        <label class="form-label" for="rating">Rating</label>
+        <input class="form-range" name="review[rating]" type="range" min="0" max="5" step="1" required>
+    </div>
+    <div>
+        <label class="form-label" for="body">Review</label>
+        <textarea class="form-control" name="review[body]" id="body" cols="30" rows="5" required></textarea>
+    </div>
+    <button>Submit</button>
+</form>
+<%}%>
+<div>
+    <h3>Reviews</h3>
+    
+    <% for (let reviews of triangle.reviews) {%>
+    <div>
+        <p>Rating: <%=reviews.rating%></p>
+        <p>Reviews: <%=reviews.body%></p>
+        <%if(user && reviews.author.equals(user)) {%>
+        <form action="/triangles/<%=triangle.id%>/reviews/<%=reviews.id%>?_method=delete" method="POST">
+            <button>Delete</button>
+        </form>
+        <%}%>
+
+    </div>
+    <%}%>
+</div>
+
+
+
+<%- include("../partials/footer") %>

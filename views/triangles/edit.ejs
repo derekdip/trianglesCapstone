@@ -1,0 +1,24 @@
+<%- include("../partials/navbar") %>
+
+
+<h1>Edit <%=triangle.name%></h1>
+    <div>
+        <a href="/triangles">Go back to all Triangles</a>
+    </div>
+    <form class="needs-validation"action="/triangles/<%=triangle.id%>/?_method=PUT" method="POST" novalidate>
+        <div>
+            <label for="name">Enter username:</label>
+            <input type="text" id="name" name="triangle[name]" value="<%=triangle.name%>" required >
+        </div>
+        <div>
+            <label for="description">Enter in comment:</label>
+            
+            <input type="text" name="triangle[description]" id="description"  value="<%=triangle.description%>" required></textarea>
+        </div>
+        <div>
+            <label for="sides">Enter username:</label>
+            <input type="text" id="sides" name="triangle[sides]" value="<%=triangle.sides%>" required />
+        </div>
+        <button>Submit</button>
+    </form>
+<%- include("../partials/footer") %>
